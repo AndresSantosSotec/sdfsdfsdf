@@ -1,0 +1,174 @@
+/* General Dashboard Container */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background: #f4f5f7;
+    overflow-x: hidden;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 300px;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    height: 100%;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .sidebar-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar-nav {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+  }
+  
+  .sidebar-item {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .sidebar-item:hover {
+    background: #93c5fd;
+    color: #1e3a8a;
+    border-radius: 8px;
+  }
+  
+  /* Main Content */
+  .dashboard-content {
+    flex: 1;
+    margin-left: 300px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .dashboard-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  /* Card Grid */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  /* Metric Cards */
+  .metric-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .metric-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #93c5fd, #bfdbfe);
+  }
+  
+  .metric-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    animation: bounce 1.5s infinite;
+  }
+  
+  .metric-title {
+    font-size: 1.25rem;
+    color: #4b5563;
+    margin-bottom: 10px;
+  }
+  
+  .metric-value {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #1f2937;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  /* Responsivity */
+  @media (max-width: 768px) {
+    .sidebar {
+      transform: translateX(-100%);
+    }
+  
+    .dashboard-content {
+      margin-left: 0;
+      padding: 20px;
+    }
+  
+    .sidebar-item {
+      font-size: 1rem;
+    }
+  
+    .dashboard-title {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .metric-card {
+      padding: 20px;
+    }
+  
+    .metric-title {
+      font-size: 1rem;
+    }
+  
+    .metric-value {
+      font-size: 1.5rem;
+    }
+  }
+  

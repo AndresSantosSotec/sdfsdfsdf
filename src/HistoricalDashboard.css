@@ -1,0 +1,19 @@
+.historical-dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9fafb;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filter-container label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+  }
+  
+  .chart-container {
+    margin-top: 20px;
+  }
+  
